@@ -40,7 +40,10 @@ const posts = require('./routes/postsRouter')
 
     // bodyparser
     app.use(bodyParser.json())
-
+app.get('/', (req, res) => {
+    console.log('ok')
+    res.send('yo')
+})
 app.use('/posts', posts)
 
 // Porta que o heroku vai gerar ou a do localhost
