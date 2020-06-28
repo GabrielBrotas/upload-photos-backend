@@ -1,5 +1,22 @@
 # upload-photos-backend
- 
+  Neste backend vamos configurar a conexão com o mongodb e a amazon s3. Vamos pegar os dados do schema e criar rotas para que o nosso frontend possa listar os arquivos, adicionar ou excluir.
+
+## Criar aplicação na AWS S3
+  - Fazer login no Console da aws;
+  - Ir nos serviços e procurar 's3';
+  - Criar um bucket -> escolher nome e colocar na regiao US east (N. Virginia) que é a mais proxima
+  - Depois desmarcar a opção 'block all public access', pois vamos querer ter acesso de outro servidor aos arquivos salvos aqui
+  - Feito isso só criar o bucket
+  - Com o bucket criado apenas configurar ele no backend do node...
+
+  - No painel da AWS, Criaremos um usuario para que possa acessar/consumir esse bucket do s3
+
+  - Services -> IAM -> Usuarios -> Criar um novo usuario
+	 - Marcar "Acesso programatico" para liberar uma chave de acesso para acessar a API -> "Anexar politicas existentes de forma direta" e pesquisar por  "AmazonS3FullAccess" para que o usuario possa fazer upload de arquivos
+	 - Finalizar criação;
+  - Agora só configurar no backend.
+  
+  
 ## Criar banco de dados no cloud mongodb atlas
   - Ir no cloud mongodb atlas (https://www.mongodb.com/cloud);
   - Criar uma conta e um cluster gratuito;
@@ -19,6 +36,7 @@
 
   - Feito isso, agora vamos nos conectar com essa base de dados;
   - Em 'Clusters' vamos em 'Connect' e selecionar a opção 'connect your application' e copiar a url de conexão para definir como variavel ambiente no nosso deploy pela heroku;
+  
   
 ## Deploy na Heroku
   - Ir no https://dashboard.heroku.com/apps <-heroku;
