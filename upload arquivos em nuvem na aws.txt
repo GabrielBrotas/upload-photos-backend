@@ -1,0 +1,18 @@
+aws = amazon web service
+
+ir nos serviços ->
+escolher 's3' ->
+criar um bucket -> escolher nome e colocar na regiao US east (N. Virginia) que é a mais proxima
+Next -> 
+Desmarcar a opção 'block all public access'
+e criar o bucket
+
+Criado o bucket configurar ele no backend do node...
+
+No painel da AWS, Criar um usuario para que possa acessar/consumir e enviar o api do s3
+
+Services -> IAM -> Usuarios -> Criar um novo usuario
+
+	-> marcar "Acesso programatico" para liberar uma chave de acesso para acessar a API ->
+	-> "Anexar politicas existentes de forma direta" e pesquisar por "AmazonS3FullAccess" para que o usuario possa fazer upload de arquivos
+	> finalizar criação
