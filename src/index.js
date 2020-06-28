@@ -43,6 +43,9 @@ const posts = require('./routes/postsRouter')
 
 app.use('/posts', posts)
 
-app.listen(8081, () => {
+// Porta que o heroku vai gerar ou a do localhost
+const PORT = process.env.PORT || 8081
+
+app.listen(PORT, () => {
     console.log('API running in http://localhost:8081')
 })
