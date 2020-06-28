@@ -4,8 +4,15 @@ const multerConfig = require('../config/multerConfig')
 
 const Post = require('../models/Post')
 
-// multer é um middleware que vai permitir o envio de arquivos, entre os parenteses vai a config del e
-// depois do '.' vamos definir o arquivo se é single(apenas um), array (multiplos arquivos), entre outros
+
+// listagem das fotos
+router.get('/', async (req, res) => {
+    console.log(process.env)
+    const posts = await Post.find({});
+
+    return res.json(posts)
+})
+
 router.post('/', multer(multerConfig).single('file') , async (req, res) => {
     
     const {originalname: name, size, key, location: url = ''} = req.file
@@ -19,13 +26,6 @@ router.post('/', multer(multerConfig).single('file') , async (req, res) => {
     })
 
     return res.json(post)
-})
-
-// listagem das fotos
-router.get('/', async (req, res) => {
-    const posts = await Post.find({});
-
-    return res.json(posts)
 })
 
 router.delete('/:id', async (req, res) => {
