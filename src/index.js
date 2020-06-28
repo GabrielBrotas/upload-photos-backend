@@ -44,6 +44,7 @@ const posts = require('./routes/postsRouter')
 app.get('/', (req, res) => {
     res.send('helelo')
 })
+
 app.use('/posts', posts)
 
 // Porta que o heroku vai gerar ou a do localhost
