@@ -41,8 +41,8 @@ const posts = require('./routes/postsRouter')
     // bodyparser
     app.use(bodyParser.json())
 app.get('/', (req, res) => {
-    console.log('ok')
-    res.send('yo')
+
+    res.send(process.env)
 })
 app.use('/posts', posts)
 

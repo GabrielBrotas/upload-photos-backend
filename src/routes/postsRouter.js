@@ -7,7 +7,7 @@ const Post = require('../models/Post')
 
 // listagem das fotos
 router.get('/', async (req, res) => {
-    console.log(process.env)
+ 
     const posts = await Post.find({});
 
     return res.json(posts)
