@@ -24,7 +24,7 @@ router.post('/', multer(multerConfig).single('file') , async (req, res) => {
         key,
         url ,
     })
-
+    
     return res.json(post)
 })
 
